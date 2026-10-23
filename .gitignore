@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+# local data and model outputs (copyrighted text/images are never committed)
+data/VnExpress/
+data/**/images/
+data/**/*.parquet
+outputs/
+*.jpg
+*.jpeg
+*.webp

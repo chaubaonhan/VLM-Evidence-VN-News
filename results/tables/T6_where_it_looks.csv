@@ -1,0 +1,15 @@
+model,metric,n,value,ci
+qwen3vl8b,image share of relevance (mean),1000,0.3529757501797713,"35.3 [34.2, 36.4]"
+qwen3vl8b,image share (median),1000,0.33013644969669087,
+qwen3vl8b,image share | full correct,743,0.3690526488096877,
+qwen3vl8b,image share | full wrong,257,0.3064966230123477,
+qwen3vl8b,relevance per image token / per text token,1000,0.7309185510411089,median ratio
+qwen3vl8b,prompt/instruction share of all relevance,1000,0.3643956462503701,
+qwen3vl8b,"Spearman(image share, Δp when image removed)",1000,-0.009159359609530718,"[-0.07, 0.05]"
+internvl35_8b,image share of relevance (mean),1000,0.5469238653452523,"54.7 [53.7, 55.7]"
+internvl35_8b,image share (median),1000,0.5563018117755232,
+internvl35_8b,image share | full correct,707,0.558865279928499,
+internvl35_8b,image share | full wrong,293,0.5181095987570083,
+internvl35_8b,relevance per image token / per text token,1000,3.04195258651567,median ratio
+internvl35_8b,prompt/instruction share of all relevance,1000,0.3286488833933559,
+internvl35_8b,"Spearman(image share, Δp when image removed)",1000,-0.03578544529649058,"[-0.10, 0.03]"

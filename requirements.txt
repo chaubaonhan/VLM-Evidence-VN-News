@@ -1,0 +1,12 @@
+# Tested with Python 3.13, PyTorch 2.11 (CUDA 13.0) and Transformers 5.18.0 (also 4.57.6)
+torch>=2.4
+transformers>=4.57
+accelerate>=1.0
+numpy
+pandas
+pyarrow
+pillow
+scikit-learn
+matplotlib
+# only for the text-in-image analysis (scripts/run_ocr.py)
+easyocr
