@@ -142,7 +142,7 @@ def _pred_panel(ax, studies, dfi, g):
     ax.axis("off")
     y_true = int(dfi.at[g, "label"])
     ax.text(0.0, 1.0, f"True topic: {V.CATS[y_true]}", fontsize=7, fontweight="bold", va="top", transform=ax.transAxes)
-    cols = [0.0, 0.46, 0.76]
+    cols = [0.0, 0.285, 0.655]  # wide enough that "✓ Entertainment" in both model columns does not overlap
     ax.text(cols[1], 0.84, NAMES.get(studies[0].vlm.name, studies[0].vlm.name).split("-")[0], fontsize=6.3,
             va="top", transform=ax.transAxes, color="#444")
     if len(studies) > 1:
@@ -157,7 +157,7 @@ def _pred_panel(ax, studies, dfi, g):
                 continue
             k = int(p.argmax())
             ok = k == y_true
-            ax.text(cols[1 + j], y, f"{'✓' if ok else '✗'} {V.CATS[k]}\n   p={p[k]:.2f}", fontsize=5.8, va="top",
+            ax.text(cols[1 + j], y, f"{'✓' if ok else '✗'} {V.CATS[k]}\n   p={p[k]:.2f}", fontsize=5.5, va="top",
                     transform=ax.transAxes, color=OK if ok else BAD)
         y -= 0.22
 
@@ -173,7 +173,7 @@ def draw_example(fig, outer, studies, df, g, ocr=None, title=None, n_words=46):
     img = Image.open(dfi.at[g, "image_path"]).convert("RGB")
     img.thumbnail((640, 640))
     gs = gridspec.GridSpecFromSubplotSpec(2, 4, subplot_spec=outer, height_ratios=[1.0, 0.55],
-                                          width_ratios=[1, 1, 1, 0.95], hspace=0.12, wspace=0.06)
+                                          width_ratios=[1, 1, 1, 1.35], hspace=0.12, wspace=0.06)
     # photo
     ax = fig.add_subplot(gs[0, 0])
     ax.imshow(img)
@@ -218,7 +218,7 @@ def draw_example(fig, outer, studies, df, g, ocr=None, title=None, n_words=46):
         y = _draw_words(ax, words, scores, x0=0.16, y0=y) - 0.2
 
 
-def figure(studies, df, gids, path, ocr=None, titles=None, width=7.2):
+def figure(studies, df, gids, path, ocr=None, titles=None, width=8.4):
     plt = _plt()
     from matplotlib import gridspec
     from matplotlib.cm import ScalarMappable

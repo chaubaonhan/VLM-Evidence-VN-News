@@ -20,6 +20,9 @@ bootstrap resamples of articles; `p_holm` is Holm-adjusted within each family.
 | `tables/T11_text_in_image_by_topic.csv` | text-in-image results per topic | Sect. 5.4 |
 
 `figures/` holds Figs. 1, 2 and 4 of the paper, redrawn from these tables with
-`python scripts/make_paper_figures.py`. Fig. 3 shows VnExpress photographs and is not included.
+`python scripts/make_paper_figures.py`, and Fig. 3 (`fig_where_it_looks.png`). `figures/where_it_looks/`
+holds the relevance maps of further test articles, one PNG per article, named by its `global_id`
+(rendered with `scripts/make_where_figure.py`). The photographs and article excerpts in these figures
+remain the property of VnExpress and are shown for illustration only.
 
 Model values are fractions (multiply by 100 for percentages) unless a column is already formatted.

@@ -37,6 +37,57 @@ The verbatim prompt is in [`docs/prompt.md`](docs/prompt.md).
 
 All tables with confidence intervals are in [`results/`](results/).
 
+## Where does the model look?
+
+Gradient×input relevance of both models on the same test article: the photograph (dashed boxes = text
+found by OCR), an image heatmap per model with the share of relevance that falls on the image, the
+prediction under each input condition, and the article excerpt with every word shaded by its relevance.
+The maps are gradient×input relevance, validated by the deletion check (T7), not raw attention weights.
+
+![Where the models look (paper Fig. 3)](results/figures/fig_where_it_looks.png)
+
+More test articles, grouped as in the paper (all in
+[`results/figures/where_it_looks/`](results/figures/where_it_looks/)):
+
+<details>
+<summary><b>The photo corrects a text-only error</b> (3 articles)</summary>
+
+![Entertainment_24609](results/figures/where_it_looks/Entertainment_24609.png)
+![Education_6007](results/figures/where_it_looks/Education_6007.png)
+![Business_15442](results/figures/where_it_looks/Business_15442.png)
+
+</details>
+
+<details>
+<summary><b>The photo overrides a correct text-only decision</b> (3 articles)</summary>
+
+![Lifestyle_27346](results/figures/where_it_looks/Lifestyle_27346.png)
+![Business_15141](results/figures/where_it_looks/Business_15141.png)
+![Business_15094](results/figures/where_it_looks/Business_15094.png)
+
+</details>
+
+<details>
+<summary><b>Text printed in the photo</b> (2 articles)</summary>
+
+![Education_6447](results/figures/where_it_looks/Education_6447.png)
+![Business_15671](results/figures/where_it_looks/Business_15671.png)
+
+</details>
+
+<details>
+<summary><b>Text and photo agree</b> (3 articles)</summary>
+
+![Law_21270](results/figures/where_it_looks/Law_21270.png)
+![Automotive_3121](results/figures/where_it_looks/Automotive_3121.png)
+![Education_6219](results/figures/where_it_looks/Education_6219.png)
+
+</details>
+
+The candidates are ranked by `vlmstudy.figure.candidates` on Qwen3-VL (the first model), so in some
+"agree" examples InternVL3.5 still misreads the photograph alone. To render the figures for any other
+article, see `scripts/make_where_figure.py`.
+
 ## Repository layout
 
 ```
@@ -54,7 +105,7 @@ scripts/
   build_metadata.py      data/bn_vn3s_mm_metadata.csv from the full corpus
   fetch_images.py        re-collect the photographs from their source URLs
 data/                    BN_VN3S_MM metadata (ids, labels, split, URLs); no texts or images
-results/                 result tables of the paper and redrawn figures
+results/                 result tables of the paper, redrawn figures and "where it looks" examples
 docs/prompt.md           the classification prompt
 ```
 
@@ -128,7 +179,8 @@ and coverage), `attribution/<context>.pkl` (relevance per token and image cell) 
 ## Copyright and license
 
 The source code is released under the [MIT License](LICENSE). The license does not cover the VnExpress
-articles or photographs referenced in `data/`. These remain the property of VnExpress and the
+articles or photographs referenced in `data/`, nor the photographs and article excerpts shown in the
+example figures under `results/figures/`. These remain the property of VnExpress and the
 respective photographers and agencies, and they were used solely for non-commercial scientific research.
 
 ## Citation
