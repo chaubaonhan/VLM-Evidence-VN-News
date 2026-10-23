@@ -136,12 +136,13 @@ respective photographers and agencies, and they were used solely for non-commerc
 The paper is under review at [ACIIDS 2027](https://aciids.pwr.edu.pl/2027/). Until it is published, please cite it as
 
 ```bibtex
-@unpublished{chau2027nearparity,
-  title  = {Near-Parity Hides Decision Churn: What Evidence Do Vision-Language Models Use to Classify Vietnamese News?},
-  author = {Chau, Bao Nhan and Hoang, Anh},
-  note   = {Under review at the Asian Conference on Intelligent Information and Database Systems (ACIIDS 2027)},
-  year   = {2027},
-  url    = {https://github.com/chaubaonhan/VLM-Evidence-VN-News}
+@inproceedings{chau2027nearparity,
+  title     = {Near-Parity Hides Decision Churn: What Evidence Do Vision-Language Models Use to Classify Vietnamese News?},
+  author    = {Chau, Bao Nhan and Hoang, Anh},
+  booktitle = {Asian Conference on Intelligent Information and Database Systems (ACIIDS 2027)},
+  year      = {2027},
+  status    = {Under review},
+  url       = {https://github.com/chaubaonhan/VLM-Evidence-VN-News}
 }
 ```
 
